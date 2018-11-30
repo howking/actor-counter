@@ -1,0 +1,24 @@
+{
+  "name": "actor-counter",
+  "version": "0.0.1",
+  "description": "actor-counter",
+  "scripts": {
+    "patch": "perl -pi -e 's/timeout = setTimeout/timeout = window.setTimeout/g' node_modules/actor-helpers/src/watchable-message-store/WatchableMessageStore.ts",
+    "build": "rm -rf dist/ && rollup -c && cp index.html dist/",
+    "serve": "http-server dist"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.3",
+    "actor-helpers": "github:PolymerLabs/actor-helpers",
+    "rollup": "^0.66.6",
+    "rollup-plugin-loadz0r": "^0.5.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "rollup-plugin-typescript2": "^0.17.1",
+    "typescript": "^3.1.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
